@@ -2,18 +2,20 @@ const Header = (props) => {
   return <h1>{props.course}</h1>
 }
 
+const Part = (props) => {
+  return (
+    <p>
+      {props.part} - {props.exercises} units
+    </p>
+  )
+}
+
 const Content = (props) => {
   return (
     <div>
-      <p>
-        {props.part1} - {props.exercises1} units
-      </p>
-      <p>
-        {props.part2} - {props.exercises2} units
-      </p>
-      <p>
-        {props.part3} - {props.exercises3} units
-      </p>
+      <Part part={props.part1} exercises={props.exercises1} />
+      <Part part={props.part2} exercises={props.exercises2} />
+      <Part part={props.part3} exercises={props.exercises3} />
     </div>
   )
 }
@@ -33,7 +35,6 @@ const Footer = (props) => {
 }
 
 const App = () => {
-  // CIT-U Custom Data
   const course = 'CSIT340 - Industry Elective'
   const part1 = 'Web Development using React.js'
   const exercises1 = 3
@@ -42,10 +43,9 @@ const App = () => {
   const part3 = 'Enterprise Systems with ServiceNow'
   const exercises3 = 3
 
-  // Footer Data (Update section accordingly)
   const fullName = 'Gave Hontiveros'
   const courseCode = 'CSIT340'
-  const section = '' // Replace with your actual section if needed
+  const section = '3F' // Add your section here so the footer formatting matches your teacher's rules
 
   return (
     <div>
